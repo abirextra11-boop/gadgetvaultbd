@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0877e8">
+<title>GadgetVault | Premium Gadgets & DJI Drones</title>
+<meta name="description" content="GadgetVault — iPhone ও DJI Drone-এর জন্য বিশ্বস্ত অনলাইন শপ। WhatsApp-এ অর্ডার করুন।">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--blue:#0877e8;--blue2:#0057c9;--dark:#17181b;--soft:#f4f6f9;--text:#17191d;--muted:#74777d;--card:#fff;--line:#e5e8ed}
+html{scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans Bengali",Arial,sans-serif;background:var(--soft);color:var(--text);line-height:1.6}
+a{text-decoration:none;color:inherit}
+button{font:inherit}
+.container{width:min(1180px,92%);margin:auto}
+header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(0,0,0,.06)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:10px;font-size:27px;font-weight:900;letter-spacing:-1.2px}
+.brand img{width:44px;height:44px;border-radius:12px;object-fit:cover}
+.brand span{color:var(--blue)}
+.navlinks{display:flex;gap:22px;font-weight:700;font-size:14px}
+.navlinks a{transition:.25s}.navlinks a:hover{color:var(--blue)}
+.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#07111f,#0b2c52 50%,#0877e8);color:#fff;padding:72px 0 82px}
+.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;filter:blur(2px);opacity:.25}
+.hero:before{width:330px;height:330px;background:#25a7ff;right:-80px;top:-120px}
+.hero:after{width:240px;height:240px;background:#fff;left:-100px;bottom:-130px}
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:45px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:8px 14px;border-radius:999px;font-weight:700;font-size:13px;margin-bottom:18px}
+.hero h1{font-size:clamp(38px,6vw,68px);line-height:1.03;letter-spacing:-2px;margin-bottom:18px}
+.hero h1 span{color:#61c1ff}
+.hero p{font-size:18px;color:#dbeaff;max-width:650px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:27px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 22px;border-radius:14px;border:1px solid transparent;font-weight:800;cursor:pointer;transition:.25s}
+.btn:hover{transform:translateY(-3px)}
+.btn-wa{background:#20c86b;color:#fff;box-shadow:0 10px 28px rgba(32,200,107,.25)}
+.btn-light{background:#fff;color:#111}
+.hero-card{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);padding:18px;border-radius:25px;box-shadow:0 25px 70px rgba(0,0,0,.25);animation:float 4s ease-in-out infinite}
+.hero-card img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:17px}
+.section{padding:70px 0}
+.section-head{text-align:center;margin-bottom:35px}
+.eyebrow{color:var(--blue);font-weight:900;text-transform:uppercase;font-size:13px;letter-spacing:1px}
+.section-head h2{font-size:clamp(29px,4vw,44px);margin:7px 0}
+.section-head p{color:var(--muted);max-width:700px;margin:auto}
+.filters{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:30px}
+.filter{border:0;background:#e9ebef;padding:12px 25px;border-radius:999px;font-weight:800;cursor:pointer;transition:.25s}
+.filter.active,.filter:hover{background:var(--blue);color:#fff;transform:translateY(-2px)}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.product{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 8px 28px rgba(18,30,45,.06);transition:.3s;animation:rise .65s both}
+.product:hover{transform:translateY(-7px);box-shadow:0 20px 45px rgba(18,30,45,.12)}
+.product-media{background:#fafafa;padding:12px;position:relative}
+.product-media img{width:100%;height:270px;object-fit:contain;border-radius:15px;display:block}
+.tag{position:absolute;left:22px;top:22px;background:#111;color:#fff;border-radius:999px;padding:5px 10px;font-size:12px;font-weight:800}
+.product-body{padding:20px}
+.product h3{font-size:22px;margin-bottom:10px}
+.specs{list-style:none;color:#70747a;font-size:14px;min-height:112px}
+.specs li{margin:5px 0}
+.price{font-size:29px;font-weight:950;margin:15px 0}
+.order-note{background:#fff9df;border:1px solid #f1df91;color:#8c6910;padding:10px 12px;border-radius:12px;font-weight:700;text-align:center;font-size:13px;margin-bottom:12px}
+.order-btn{width:100%;background:#17181b;color:#fff;border:0;padding:14px;border-radius:13px;font-weight:850;cursor:pointer;transition:.25s}
+.order-btn:hover{background:var(--blue);transform:translateY(-2px)}
+.info-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.info-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:25px;text-align:center;box-shadow:0 7px 25px rgba(18,30,45,.05)}
+.info-icon{font-size:35px;margin-bottom:8px}.info-card h3{font-size:18px;margin-bottom:5px}.info-card p{color:var(--muted);font-size:14px}
+.trust{background:#fff;border:1px solid #dce9f8;border-radius:28px;padding:45px;display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center;box-shadow:0 12px 45px rgba(18,30,45,.07)}
+.verified{display:inline-flex;gap:7px;background:#edf6ff;color:#0877e8;padding:9px 15px;border-radius:999px;font-weight:900;margin-bottom:15px}
+.trust h2{font-size:clamp(28px,4vw,42px);line-height:1.15;margin-bottom:14px}.trust p{color:var(--muted)}
+.license-wrap{background:#f8fafc;border:1px solid var(--line);padding:14px;border-radius:20px;cursor:pointer}
+.license-wrap img{width:100%;max-height:560px;object-fit:contain;border-radius:12px;display:block}
+.location{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.location-card,.contact-card{background:#fff;border:1px solid var(--line);border-radius:23px;padding:30px}
+.location-card h3,.contact-card h3{font-size:25px;margin-bottom:10px}.location-card p,.contact-card p{color:var(--muted)}
+.map-btn{margin-top:18px;background:#111;color:#fff;display:inline-flex}
+.contact-list{list-style:none;margin-top:15px}.contact-list li{padding:9px 0;border-bottom:1px dashed var(--line)}
+.socials{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.social{padding:11px 16px;border-radius:12px;background:#f0f2f5;font-weight:800}.social:hover{background:var(--blue);color:#fff}
+.notice{background:linear-gradient(135deg,#111,#27313c);color:#fff;border-radius:25px;padding:34px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.notice p{color:#cdd3da}.notice h2{font-size:28px}
+footer{background:#121315;color:#fff;padding:35px 0;margin-top:10px}.footer{display:flex;justify-content:space-between;gap:20px;align-items:center}.footer small{color:#9da2aa}
+.float-wa{position:fixed;right:18px;bottom:18px;z-index:999;width:58px;height:58px;border-radius:50%;background:#20c86b;color:#fff;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 10px 30px rgba(0,0,0,.25);animation:pulse 2s infinite}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.7);display:none;align-items:center;justify-content:center;z-index:2000;padding:18px}.modal.show{display:flex}.modal-box{background:#fff;border-radius:24px;padding:25px;width:min(500px,100%);position:relative}.close{position:absolute;right:15px;top:12px;border:0;background:#eee;border-radius:50%;width:35px;height:35px;cursor:pointer;font-size:20px}.modal h3{font-size:25px;margin-bottom:5px}.modal p{color:var(--muted);margin-bottom:18px}.field{margin-bottom:13px}.field label{display:block;font-weight:800;margin-bottom:5px}.field input,.field select{width:100%;padding:13px;border:1px solid #dfe3e8;border-radius:12px;outline:none}.field input:focus,.field select:focus{border-color:var(--blue)}.submit{width:100%;border:0;background:var(--blue);color:#fff;padding:14px;border-radius:13px;font-weight:900;cursor:pointer}
+.reveal{opacity:0;transform:translateY(25px);transition:.7s}.reveal.visible{opacity:1;transform:none}
+@keyframes float{50%{transform:translateY(-9px)}}@keyframes rise{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:none}}@keyframes pulse{50%{transform:scale(1.08)}}
+@media(max-width:900px){.hero-grid,.trust,.location{grid-template-columns:1fr}.products{grid-template-columns:repeat(2,1fr)}.info-grid{grid-template-columns:repeat(2,1fr)}.navlinks{display:none}}
+@media(max-width:600px){.nav{height:66px}.brand{font-size:23px}.brand img{width:38px;height:38px}.hero{padding:52px 0 60px}.section{padding:52px 0}.products{grid-template-columns:1fr}.info-grid{grid-template-columns:1fr 1fr}.trust{padding:25px}.notice{display:block}.notice .btn{margin-top:18px}.product-media img{height:250px}.footer{display:block;text-align:center}.footer small{display:block;margin-top:7px}}
+
+/* Customer Reviews */
+.reviews-section{padding:65px 0;background:linear-gradient(135deg,#eef7ff,#f9f4ff 45%,#effff8);overflow:hidden;position:relative}
+.reviews-section:before{content:"";position:absolute;width:280px;height:280px;border-radius:50%;background:#72c7ff;opacity:.16;filter:blur(10px);left:-90px;top:-80px}
+.reviews-section:after{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:#c084fc;opacity:.12;filter:blur(10px);right:-100px;bottom:-120px}
+.review-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 15px;border-radius:999px;background:linear-gradient(90deg,#0877e8,#7c3aed);color:#fff;font-weight:900;box-shadow:0 8px 25px rgba(8,119,232,.2)}
+.review-window{position:relative;z-index:2;overflow:hidden;margin-top:30px;padding:8px 0 22px}
+.review-track{display:flex;gap:20px;width:max-content;animation:reviewMove 55s linear infinite}
+.review-track:hover{animation-play-state:paused}
+.review-card{width:340px;min-height:225px;background:rgba(255,255,255,.96);border:1px solid rgba(255,255,255,.8);border-radius:24px;padding:23px;box-shadow:0 14px 35px rgba(31,41,55,.10);position:relative;overflow:hidden;flex-shrink:0}
+.review-card:before{content:"";position:absolute;left:0;top:0;width:100%;height:5px;background:linear-gradient(90deg,#0877e8,#8b5cf6,#ec4899,#10b981)}
+.review-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}.review-name{font-weight:900}.stars{letter-spacing:2px;font-size:15px}.review-card p{color:#60656d;font-size:14px;line-height:1.75}.review-check{color:#0b8f52;font-size:12px;font-weight:800;margin-top:12px}
+.review-cta{position:relative;z-index:2;margin:22px auto 0;max-width:700px;text-align:center;background:#fff;border-radius:18px;padding:15px 18px;box-shadow:0 8px 25px rgba(18,30,45,.07);font-weight:800;color:#4b5563}
+@keyframes reviewMove{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(max-width:600px){.review-card{width:295px;min-height:245px}.review-track{animation-duration:65s}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="#"><img src="logo.png" alt="GadgetVault Logo">Gadget<span>Vault</span></a>
+    <nav class="navlinks">
+      <a href="#products">Products</a><a href="#service">Why Us</a><a href="#trust">Verified</a><a href="#location">Location</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="badge">⚡ Premium Gadgets • Trusted Service</div>
+      <h1>আপনার পছন্দের <span>Gadget</span>, এখন আরও সহজে।</h1>
+      <p>iPhone ও DJI Drone-এর নির্বাচিত মডেল। WhatsApp-এ অর্ডার করুন, কুরিয়ার/হোম ডেলিভারি নিন এবং ডেলিভারির আগে পণ্য চেক করার সুযোগ পান।</p>
+      <div class="hero-actions">
+        <a class="btn btn-wa" href="https://wa.me/8801965848878?text=আসসালামু%20আলাইকুম,%20GadgetVault%20থেকে%20পণ্য%20নিতে%20চাই।" target="_blank">💬 WhatsApp-এ অর্ডার করুন</a>
+        <a class="btn btn-light" href="#products">🛍️ Products দেখুন</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <img src="8496.png" alt="GadgetVault Featured Product">
+    </div>
+  </div>
+</section>
+
+<section class="reviews-section" id="reviews">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="review-badge">⭐ Customer Reviews</div>
+      <h2>আমাদের কাস্টমাররা কী বলছেন?</h2>
+      <p>GadgetVault থেকে অর্ডার করা কাস্টমারদের অভিজ্ঞতার কিছু বার্তা।</p>
+    </div>
+    <div class="review-window">
+      <div class="review-track">
+        <article class="review-card"><div class="review-top"><span class="review-name">রাকিব ভাই</span><span class="stars">★★★★★</span></div><p>“আপনাদের পেজের মতো এরকম অনলাইন বিশ্বস্ত পেজ আর কোথাও দেখিনি। ধন্যবাদ ভাইয়া, আমার বাড়িতে প্রোডাক্টটা পৌঁছে দেওয়ার জন্য।”</p><div class="review-check">✓ Verified Customer Experience</div></article>
+        <article class="review-card"><div class="review-top"><span class="review-name">সুমাইয়া</span><span class="stars">★★★★★</span></div><p>“ইনবক্স চেক করবেন ভাইয়া। আমি আরো একটা অর্ডার দিতে চাই। নাম, ঠিকানা এবং এডভান্স দিয়ে দিয়েছি—দয়া করে আমার অর্ডারটা কনফার্ম করুন।”</p><div class="review-check">✓ Order Confirmed</div></article>
+        <article class="review-card"><div class="review-top"><span class="review-name">তানভীর</span><span class="stars">★★★★★</span></div><p>“ভাইয়া আমি আমারটা পেয়েছি। আজকে কালকে হয়তো আমার এক বন্ধু অর্ডার করতে পারে, আপনাদের নাম্বার তাকে দিয়ে দিয়েছি। 💖”</p><div class="review-check">✓ Happy Customer</div></article>
+        <article class="review-card"><div class="review-top"><span class="review-name">মেহেদী হাসান</span><span class="stars">★★★★★</span></div><p>“এক কথায় বলতে গেলে আপনাদের পেজটি সত্যিই অসাধারণ। যাদের কথা এবং কাজে একরকম মিল থাকে—এরকম আগে কখনো কোথাও দেখিনি।”</p><div class="review-check">✓ Customer Feedback</div></article>
+        <article class="review-card"><div class="review-top"><span class="review-name">শাওন</span><span class="stars">★★★★★</span></div><p>“আপনাদের প্রোডাক্টের কোয়ালিটি খুবই ভালো, বেস্ট কোয়ালিটি। ইনবক্সে আসুন ভাইয়া, আমি কেনার জন্য অর্ডার করতে চাই।”</p><div class="review-check">✓ Product Quality Feedback</div></article>
+        <article class="review-card"><div class="review-top"><span class="review-name">আলহামদুলিল্লাহ</span><span class="stars">★★★★★</span></div><p>“গতকাল অর্ডার করেছিলাম, আজ দুপুর দুইটার দিকে বাসায় পেয়ে গেলাম। কখনো ভাবিনি এত সুন্দরভাবে অনলাইনেও প্রোডাক্ট অর্ডার দিয়ে হাতে পাব।”</p><div class="review-check">✓ Delivered Successfully</div></article>
+        <article class="review-card"><div class="review-top"><span class="review-name">আরিফ ভাই</span><span class="stars">★★★★★</span></div><p>“ভাইয়া আমারটা পেয়েছি আজকে বিকালে। আলহামদুলিল্লাহ আপনাদের কথা এবং কাজে খুবই মিল আছে। চাইলে আপনারাও অর্ডার দিতে পারেন।”</p><div class="review-check">✓ Happy Customer</div></article>
+        <article class="review-card"><div class="review-top"><span class="review-name">জুয়েল</span><span class="stars">★★★★★</span></div><p>“প্রোডাক্টগুলো সত্যিই খুব ভালো। যেমনটা দেখেছেন ঠিক তেমনটাই পার্সেল করে পাঠিয়েছেন। আলহামদুলিল্লাহ আমি খুব খুশি।”</p><div class="review-check">✓ Product Received</div></article>
+        <article class="review-card"><div class="review-top"><span class="review-name">নাঈম</span><span class="stars">★★★★★</span></div><p>“আপনাদের পেজের মতো এরকম ভালো আর কোনো পেজ দেখিনি। আপনাদের ডেলিভারি ম্যানরাও খুব ভালো।”</p><div class="review-check">✓ Delivery Feedback</div></article>
+        <article class="review-card"><div class="review-top"><span class="review-name">সাদিয়া</span><span class="stars">★★★★★</span></div><p>“ভাইয়া আমি একটি প্রোডাক্ট অর্ডার করেছিলাম, সেটি বুঝে পেয়েছি। আরও একটি প্রোডাক্ট অর্ডার করবো।”</p><div class="review-check">✓ Repeat Customer</div></article>
+        <article class="review-card"><div class="review-top"><span class="review-name">রিফাত</span><span class="stars">★★★★★</span></div><p>“ভাইয়া আপনারা সময় মতো ডেলিভারি করে থাকেন। তার জন্য আপনাদেরকে অনেক ধন্যবাদ।”</p><div class="review-check">✓ On-time Delivery</div></article>
+
+        <article class="review-card"><div class="review-top"><span class="review-name">রাকিব ভাই</span><span class="stars">★★★★★</span></div><p>“আপনাদের পেজের মতো এরকম অনলাইন বিশ্বস্ত পেজ আর কোথাও দেখিনি। ধন্যবাদ ভাইয়া, আমার বাড়িতে প্রোডাক্টটা পৌঁছে দেওয়ার জন্য।”</p><div class="review-check">✓ Verified Customer Experience</div></article>
+        <article class="review-card"><div class="review-top"><span class="review-name">সুমাইয়া</span><span class="stars">★★★★★</span></div><p>“ইনবক্স চেক করবেন ভাইয়া। আমি আরো একটা অর্ডার দিতে চাই। নাম, ঠিকানা এবং এডভান্স দিয়ে দিয়েছি—দয়া করে আমার অর্ডারটা কনফার্ম করুন।”</p><div class="review-check">✓ Order Confirmed</div></article>
+        <article class="review-card"><div class="review-top"><span class="review-name">তানভীর</span><span class="stars">★★★★★</span></div><p>“ভাইয়া আমি আমারটা পেয়েছি। আজকে কালকে হয়তো আমার এক বন্ধু অর্ডার করতে পারে, আপনাদের নাম্বার তাকে দিয়ে দিয়েছি। 💖”</p><div class="review-check">✓ Happy Customer</div></article>
+        <article class="review-card"><div class="review-top"><span class="review-name">মেহেদী হাসান</span><span class="stars">★★★★★</span></div><p>“এক কথায় বলতে গেলে আপনাদের পেজটি সত্যিই অসাধারণ। যাদের কথা এবং কাজে একরকম মিল থাকে—এরকম আগে কখনো কোথাও দেখিনি।”</p><div class="review-check">✓ Customer Feedback</div></article>
+        <article class="review-card"><div class="review-top"><span class="review-name">শাওন</span><span class="stars">★★★★★</span></div><p>“আপনাদের প্রোডাক্টের কোয়ালিটি খুবই ভালো, বেস্ট কোয়ালিটি। ইনবক্সে আসুন ভাইয়া, আমি কেনার জন্য অর্ডার করতে চাই।”</p><div class="review-check">✓ Product Quality Feedback</div></article>
+        <article class="review-card"><div class="review-top"><span class="review-name">আলহামদুলিল্লাহ</span><span class="stars">★★★★★</span></div><p>“গতকাল অর্ডার করেছিলাম, আজ দুপুর দুইটার দিকে বাসায় পেয়ে গেলাম। কখনো ভাবিনি এত সুন্দরভাবে অনলাইনেও প্রোডাক্ট অর্ডার দিয়ে হাতে পাব।”</p><div class="review-check">✓ Delivered Successfully</div></article>
+        <article class="review-card"><div class="review-top"><span class="review-name">আরিফ ভাই</span><span class="stars">★★★★★</span></div><p>“ভাইয়া আমারটা পেয়েছি আজকে বিকালে। আলহামদুলিল্লাহ আপনাদের কথা এবং কাজে খুবই মিল আছে। চাইলে আপনারাও অর্ডার দিতে পারেন।”</p><div class="review-check">✓ Happy Customer</div></article>
+        <article class="review-card"><div class="review-top"><span class="review-name">জুয়েল</span><span class="stars">★★★★★</span></div><p>“প্রোডাক্টগুলো সত্যিই খুব ভালো। যেমনটা দেখেছেন ঠিক তেমনটাই পার্সেল করে পাঠিয়েছেন। আলহামদুলিল্লাহ আমি খুব খুশি।”</p><div class="review-check">✓ Product Received</div></article>
+        <article class="review-card"><div class="review-top"><span class="review-name">নাঈম</span><span class="stars">★★★★★</span></div><p>“আপনাদের পেজের মতো এরকম ভালো আর কোনো পেজ দেখিনি। আপনাদের ডেলিভারি ম্যানরাও খুব ভালো।”</p><div class="review-check">✓ Delivery Feedback</div></article>
+        <article class="review-card"><div class="review-top"><span class="review-name">সাদিয়া</span><span class="stars">★★★★★</span></div><p>“ভাইয়া আমি একটি প্রোডাক্ট অর্ডার করেছিলাম, সেটি বুঝে পেয়েছি। আরও একটি প্রোডাক্ট অর্ডার করবো।”</p><div class="review-check">✓ Repeat Customer</div></article>
+        <article class="review-card"><div class="review-top"><span class="review-name">রিফাত</span><span class="stars">★★★★★</span></div><p>“ভাইয়া আপনারা সময় মতো ডেলিভারি করে থাকেন। তার জন্য আপনাদেরকে অনেক ধন্যবাদ।”</p><div class="review-check">✓ On-time Delivery</div></article>
+      </div>
+    </div>
+    <div class="review-cta">💙 আপনাদের বিশ্বাস ও ভালোবাসাই GadgetVault-এর অনুপ্রেরণা।</div>
+  </div>
+</section>
+
+<section class="section" id="products">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Our Collection</div>
+      <h2>Premium Products</h2>
+      <p>আপনার প্রয়োজন অনুযায়ী iPhone ও DJI Drone-এর মডেল বেছে নিন।</p>
+    </div>
+    <div class="filters">
+      <button class="filter active" data-filter="all">All Products</button>
+      <button class="filter" data-filter="iphone">iPhones</button>
+      <button class="filter" data-filter="drone">DJI Drones</button>
+    </div>
+    <div class="products">
+
+      <!-- iPhone products -->
+      <article class="product reveal" data-category="iphone"><div class="product-media"><span class="tag">iPhone</span><img src="8418.jpg" alt="iPhone XS Max"></div><div class="product-body"><h3>iPhone XS Max</h3><ul class="specs"><li>🔋 Battery Health: 100%</li><li>📦 Condition: New / Fresh</li><li>🎨 বিভিন্ন কালার অপশন</li><li>💾 Storage: Model অনুযায়ী</li></ul><div class="price">৳3,990</div><div class="order-note">⚠️ অর্ডার কনফার্ম করতে ৳২০০ Advance</div><button class="order-btn" onclick="openOrder('iPhone XS Max','3990')">💬 WhatsApp-এ অর্ডার করুন</button></div></article>
+
+      <article class="product reveal" data-category="iphone"><div class="product-media"><span class="tag">iPhone</span><img src="8419.jpg" alt="iPhone 11"></div><div class="product-body"><h3>iPhone 11</h3><ul class="specs"><li>🔋 Battery Health: 100%</li><li>📦 Condition: New / Fresh</li><li>🎨 বিভিন্ন কালার অপশন</li><li>💾 Storage: Model অনুযায়ী</li></ul><div class="price">৳4,190</div><div class="order-note">⚠️ অর্ডার কনফার্ম করতে ৳২০০ Advance</div><button class="order-btn" onclick="openOrder('iPhone 11','4190')">💬 WhatsApp-এ অর্ডার করুন</button></div></article>
+
+      <article class="product reveal" data-category="iphone"><div class="product-media"><span class="tag">iPhone</span><img src="8420.jpg" alt="iPhone 11 Pro"></div><div class="product-body"><h3>iPhone 11 Pro</h3><ul class="specs"><li>🔋 Battery Health: 100%</li><li>📦 Condition: New / Fresh</li><li>🎨 বিভিন্ন কালার অপশন</li><li>💾 Storage: Model অনুযায়ী</li></ul><div class="price">৳4,490</div><div class="order-note">⚠️ অর্ডার কনফার্ম করতে ৳২০০ Advance</div><button class="order-btn" onclick="openOrder('iPhone 11 Pro','4490')">💬 WhatsApp-এ অর্ডার করুন</button></div></article>
+
+      <article class="product reveal" data-category="iphone"><div class="product-media"><span class="tag">iPhone</span><img src="8421.jpg" alt="iPhone 12"></div><div class="product-body"><h3>iPhone 12</h3><ul class="specs"><li>🔋 Battery Health: 100%</li><li>📦 Condition: New / Fresh</li><li>🎨 বিভিন্ন কালার অপশন</li><li>💾 Storage: Model অনুযায়ী</li></ul><div class="price">৳4,590</div><div class="order-note">⚠️ অর্ডার কনফার্ম করতে ৳২০০ Advance</div><button class="order-btn" onclick="openOrder('iPhone 12','4590')">💬 WhatsApp-এ অর্ডার করুন</button></div></article>
+
+      <article class="product reveal" data-category="iphone"><div class="product-media"><span class="tag">iPhone</span><img src="8422.jpg" alt="iPhone 12 Pro"></div><div class="product-body"><h3>iPhone 12 Pro</h3><ul class="specs"><li>🔋 Battery Health: 100%</li><li>📦 Condition: New / Fresh</li><li>🎨 বিভিন্ন কালার অপশন</li><li>💾 Storage: Model অনুযায়ী</li></ul><div class="price">৳4,790</div><div class="order-note">⚠️ অর্ডার কনফার্ম করতে ৳২০০ Advance</div><button class="order-btn" onclick="openOrder('iPhone 12 Pro','4790')">💬 WhatsApp-এ অর্ডার করুন</button></div></article>
+
+      <article class="product reveal" data-category="iphone"><div class="product-media"><span class="tag">iPhone</span><img src="8423.jpg" alt="iPhone 13"></div><div class="product-body"><h3>iPhone 13</h3><ul class="specs"><li>🔋 Battery Health: 100%</li><li>📦 Condition: New / Fresh</li><li>🎨 বিভিন্ন কালার অপশন</li><li>💾 Storage: Model অনুযায়ী</li></ul><div class="price">৳4,990</div><div class="order-note">⚠️ অর্ডার কনফার্ম করতে ৳২০০ Advance</div><button class="order-btn" onclick="openOrder('iPhone 13','4990')">💬 WhatsApp-এ অর্ডার করুন</button></div></article>
+
+      <article class="product reveal" data-category="iphone"><div class="product-media"><span class="tag">iPhone</span><img src="8424.jpg" alt="iPhone 13 Pro"></div><div class="product-body"><h3>iPhone 13 Pro</h3><ul class="specs"><li>🔋 Battery Health: 100%</li><li>📦 Condition: New / Fresh</li><li>🎨 বিভিন্ন কালার অপশন</li><li>💾 Storage: Model অনুযায়ী</li></ul><div class="price">৳5,190</div><div class="order-note">⚠️ অর্ডার কনফার্ম করতে ৳২০০ Advance</div><button class="order-btn" onclick="openOrder('iPhone 13 Pro','5190')">💬 WhatsApp-এ অর্ডার করুন</button></div></article>
+
+      <article class="product reveal" data-category="iphone"><div class="product-media"><span class="tag">iPhone</span><img src="8425.jpg" alt="iPhone 14"></div><div class="product-body"><h3>iPhone 14</h3><ul class="specs"><li>🔋 Battery Health: 100%</li><li>📦 Condition: New / Fresh</li><li>🎨 বিভিন্ন কালার অপশন</li><li>💾 Storage: Model অনুযায়ী</li></ul><div class="price">৳5,490</div><div class="order-note">⚠️ অর্ডার কনফার্ম করতে ৳২০০ Advance</div><button class="order-btn" onclick="openOrder('iPhone 14','5490')">💬 WhatsApp-এ অর্ডার করুন</button></div></article>
+
+      <article class="product reveal" data-category="iphone"><div class="product-media"><span class="tag">iPhone</span><img src="8426.jpg" alt="iPhone 14 Pro"></div><div class="product-body"><h3>iPhone 14 Pro</h3><ul class="specs"><li>🔋 Battery Health: 100%</li><li>📦 Condition: New / Fresh</li><li>🎨 বিভিন্ন কালার অপশন</li><li>💾 Storage: Model অনুযায়ী</li></ul><div class="price">৳5,700</div><div class="order-note">⚠️ অর্ডার কনফার্ম করতে ৳২০০ Advance</div><button class="order-btn" onclick="openOrder('iPhone 14 Pro','5700')">💬 WhatsApp-এ অর্ডার করুন</button></div></article>
+
+      <article class="product reveal" data-category="iphone"><div class="product-media"><span class="tag">Featured</span><img src="8427.jpg" alt="iPhone 15"></div><div class="product-body"><h3>iPhone 15</h3><ul class="specs"><li>🔋 Battery Health: 100%</li><li>📦 Condition: New / Fresh</li><li>🎨 সব কালার অ্যাভেইলেবল</li><li>🔌 USB-C Port & Dynamic Island</li></ul><div class="price">৳5,990</div><div class="order-note">⚠️ অর্ডার কনফার্ম করতে ৳২০০ Advance</div><button class="order-btn" onclick="openOrder('iPhone 15','5990')">💬 WhatsApp-এ অর্ডার করুন</button></div></article>
+
+      <!-- DJI Drone products -->
+      <article class="product reveal" data-category="drone"><div class="product-media"><span class="tag">DJI</span><img src="mini-3-pro.png" alt="DJI Mini 3 Pro"></div><div class="product-body"><h3>DJI Mini 3 Pro</h3><ul class="specs"><li>🔋 ব্যাটারি: ৩টি</li><li>✈️ সর্বোচ্চ ফ্লাইট টাইম: ৩৮ মিনিট</li><li>📡 সর্বোচ্চ রেঞ্জ: ১২ কিমি</li><li>⚡ সর্বোচ্চ গতি: ৫৭.৬ কিমি/ঘণ্টা</li><li>📦 Standard Edition</li></ul><div class="price">৳3,500</div><div class="order-note">⚠️ অর্ডার কনফার্ম করতে ৳২০০ Advance</div><button class="order-btn" onclick="openOrder('DJI Mini 3 Pro','3500')">💬 WhatsApp-এ অর্ডার করুন</button></div></article>
+
+      <article class="product reveal" data-category="drone"><div class="product-media"><span class="tag">DJI</span><img src="mini-4-pro.png" alt="DJI Mini 4 Pro"></div><div class="product-body"><h3>DJI Mini 4 Pro</h3><ul class="specs"><li>🔋 ব্যাটারি: ৩টি</li><li>✈️ Up to 34 মিনিট প্রতি ব্যাটারি</li><li>📡 রেঞ্জ: Up to 16 কিমি</li><li>⚡ গতি: Up to 57.6 কিমি/ঘণ্টা</li><li>🎮 RC Pro Combo</li></ul><div class="price">৳3,500</div><div class="order-note">⚠️ অর্ডার কনফার্ম করতে ৳২০০ Advance</div><button class="order-btn" onclick="openOrder('DJI Mini 4 Pro','3500')">💬 WhatsApp-এ অর্ডার করুন</button></div></article>
+
+      <article class="product reveal" data-category="drone"><div class="product-media"><span class="tag">New</span><img src="mini-5-pro.png" alt="DJI Mini 5 Pro"></div><div class="product-body"><h3>DJI Mini 5 Pro</h3><ul class="specs"><li>🔋 Premium Drone Package</li><li>📷 High-quality Camera</li><li>🛰️ Intelligent Flight System</li><li>🎒 Complete Package</li><li>🎮 Controller Included</li></ul><div class="price">৳5,000</div><div class="order-note">⚠️ অর্ডার কনফার্ম করতে ৳২০০ Advance</div><button class="order-btn" onclick="openOrder('DJI Mini 5 Pro','5000')">💬 WhatsApp-এ অর্ডার করুন</button></div></article>
+
+      <article class="product reveal" data-category="drone"><div class="product-media"><span class="tag">DJI</span><img src="air-3s.png" alt="DJI Air 3S"></div><div class="product-body"><h3>DJI Air 3S</h3><ul class="specs"><li>🔋 ব্যাটারি: Premium Package</li><li>✈️ Long Flight Time</li><li>📡 Long Range Transmission</li><li>📷 Dual Camera System</li><li>🎮 RC Controller Package</li></ul><div class="price">Price: Contact</div><div class="order-note">⚠️ অর্ডারের জন্য WhatsApp-এ যোগাযোগ করুন</div><button class="order-btn" onclick="openOrder('DJI Air 3S','Contact')">💬 WhatsApp-এ অর্ডার করুন</button></div></article>
+
+      <article class="product reveal" data-category="drone"><div class="product-media"><span class="tag">DJI</span><img src="mavic-3-pro.png" alt="DJI Mavic 3 Pro"></div><div class="product-body"><h3>DJI Mavic 3 Pro</h3><ul class="specs"><li>📷 Professional Camera System</li><li>✈️ Long Flight Time</li><li>🛰️ Advanced Transmission</li><li>🎮 RC Pro Package</li><li>🎒 Complete Combo</li></ul><div class="price">Price: Contact</div><div class="order-note">⚠️ অর্ডারের জন্য WhatsApp-এ যোগাযোগ করুন</div><button class="order-btn" onclick="openOrder('DJI Mavic 3 Pro','Contact')">💬 WhatsApp-এ অর্ডার করুন</button></div></article>
+
+      <article class="product reveal" data-category="drone"><div class="product-media"><span class="tag">Premium</span><img src="mavic-4-pro.png" alt="DJI Mavic 4 Pro"></div><div class="product-body"><h3>DJI Mavic 4 Pro</h3><ul class="specs"><li>🔋 ব্যাটারি: ৩টি</li><li>✈️ সর্বোচ্চ ফ্লাইট টাইম: ৫১ মিনিট</li><li>📡 রেঞ্জ: Up to 41 কিমি*</li><li>🔋 Battery Capacity: 6654 mAh</li><li>🎮 RC Pro 2 Combo</li></ul><div class="price">Price: Contact</div><div class="order-note">⚠️ অর্ডারের জন্য WhatsApp-এ যোগাযোগ করুন</div><button class="order-btn" onclick="openOrder('DJI Mavic 4 Pro','Contact')">💬 WhatsApp-এ অর্ডার করুন</button></div></article>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" id="service">
+  <div class="container">
+    <div class="section-head reveal"><div class="eyebrow">Our Service</div><h2>কেন GadgetVault?</h2><p>অর্ডার থেকে ডেলিভারি পর্যন্ত সহজ ও পরিষ্কার সার্ভিস।</p></div>
+    <div class="info-grid">
+      <div class="info-card reveal"><div class="info-icon">🚚</div><h3>Courier / Home Delivery</h3><p>কুরিয়ার ও হোম ডেলিভারি সুবিধা।</p></div>
+      <div class="info-card reveal"><div class="info-icon">📦</div><h3>Product Check</h3><p>ডেলিভারির সময় পণ্য চেক করার সুযোগ।</p></div>
+      <div class="info-card reveal"><div class="info-icon">💬</div><h3>WhatsApp Support</h3><p>অর্ডার ও তথ্যের জন্য সরাসরি যোগাযোগ।</p></div>
+      <div class="info-card reveal"><div class="info-icon">🔄</div><h3>Return Support</h3><p>প্রযোজ্য ক্ষেত্রে সমস্যা জানিয়ে Return Support।</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="trust">
+  <div class="container">
+    <div class="trust reveal">
+      <div>
+        <div class="verified">✓ Verified Business</div>
+        <h2>আমাদের ব্যবসার বৈধতার প্রমাণ</h2>
+        <p>গ্রাহকদের আস্থা ও স্বচ্ছতার জন্য আমাদের দোকানের Trade License প্রদর্শন করা হলো। ছবিটি বড় করে দেখতে ছবিতে ক্লিক করুন।</p>
+        <div style="margin-top:20px"><a class="btn btn-light" style="background:#111;color:#fff" href="#location">🏪 দোকানের তথ্য দেখুন</a></div>
+      </div>
+      <div class="license-wrap" onclick="openLicense()">
+        <img src="trade-license-new.png" alt="GadgetVault Trade License">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="location">
+  <div class="container">
+    <div class="section-head reveal"><div class="eyebrow">Visit / Contact</div><h2>আমাদের দোকানের লোকেশন</h2><p>দোকানের ঠিকানা ও যোগাযোগের তথ্য নিচে দেওয়া হলো।</p></div>
+    <div class="location">
+      <div class="location-card reveal">
+        <div style="font-size:40px">🏪</div>
+        <h3>GadgetVault / Drone Hub</h3>
+        <p><b>Business Location:</b><br>International Passengers Terminal, Benapole</p>
+        <p style="margin-top:10px"><b>District:</b> Jashore, Bangladesh</p>
+        <a class="btn map-btn" href="https://www.google.com/maps/search/?api=1&query=International+Passengers+Terminal+Benapole" target="_blank">📍 Google Maps-এ দেখুন</a>
+      </div>
+      <div class="contact-card reveal" id="contact">
+        <div style="font-size:40px">📞</div>
+        <h3>সরাসরি যোগাযোগ</h3>
+        <ul class="contact-list">
+          <li>📱 WhatsApp: <b>01965-848878</b></li>
+          <li>💬 WhatsApp Username: <b>gadgetvaultx</b></li>
+          <li>🕐 অর্ডার: WhatsApp-এ Message করুন</li>
+        </ul>
+        <div class="socials">
+          <a class="social" href="https://wa.me/8801965848878" target="_blank">WhatsApp</a>
+          <a class="social" href="https://www.facebook.com/gadgetvaultx" target="_blank">Facebook</a>
+          <a class="social" href="https://www.tiktok.com/@gadgetvaultx" target="_blank">TikTok</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="notice reveal">
+      <div><h2>অর্ডার করতে প্রস্তুত?</h2><p>আপনার পছন্দের Model ও Quantity জানিয়ে WhatsApp-এ Message করুন।</p></div>
+      <a class="btn btn-wa" href="https://wa.me/8801965848878?text=আসসালামু%20আলাইকুম,%20আমি%20GadgetVault%20থেকে%20অর্ডার%20করতে%20চাই।" target="_blank">💬 WhatsApp-এ নক দিন</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="container footer"><div><b style="font-size:22px">Gadget<span style="color:#2d91ff">Vault</span></b><small> — Premium Gadgets & DJI Drones</small></div><small>© 2026 GadgetVault. All Rights Reserved.</small></div></footer>
+
+<a class="float-wa" href="https://wa.me/8801965848878" target="_blank" aria-label="WhatsApp">◉</a>
+
+<div class="modal" id="orderModal">
+  <div class="modal-box">
+    <button class="close" onclick="closeOrder()">×</button>
+    <h3>অর্ডার কনফার্ম করুন</h3>
+    <p id="selectedProduct">Product</p>
+    <div class="field"><label>আপনার নাম</label><input id="customerName" placeholder="আপনার নাম লিখুন"></div>
+    <div class="field"><label>মোবাইল নাম্বার</label><input id="customerPhone" placeholder="01XXXXXXXXX" inputmode="tel"></div>
+    <div class="field"><label>কতটি নিতে চান?</label><select id="qty"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div>
+    <div class="field"><label>সম্পূর্ণ ঠিকানা</label><input id="customerAddress" placeholder="জেলা, থানা, সম্পূর্ণ ঠিকানা"></div>
+    <div class="order-note">💰 অর্ডার কনফার্ম করতে ৳২০০ Advance প্রযোজ্য। বাকি টাকা ডেলিভারির সময়।</div>
+    <button class="submit" onclick="sendOrder()">WhatsApp-এ অর্ডার পাঠান</button>
+  </div>
+</div>
+
+<div class="modal" id="licenseModal" onclick="closeLicense()"><div style="max-width:900px;width:100%;position:relative" onclick="event.stopPropagation()"><button class="close" onclick="closeLicense()">×</button><img src="trade-license-new.png" alt="Trade License" style="width:100%;max-height:90vh;object-fit:contain;background:#fff;border-radius:16px;padding:10px"></div></div>
+
+<script>
+const WA="8801965848878";
+let selectedProduct="", selectedPrice="";
+function openOrder(product,price){
+  selectedProduct=product; selectedPrice=price;
+  document.getElementById("selectedProduct").textContent=product+" — "+(price==="Contact"?"Price: Contact":"৳"+price);
+  document.getElementById("orderModal").classList.add("show");
+}
+function closeOrder(){document.getElementById("orderModal").classList.remove("show")}
+function sendOrder(){
+  const name=document.getElementById("customerName").value.trim();
+  const phone=document.getElementById("customerPhone").value.trim();
+  const qty=document.getElementById("qty").value;
+  const address=document.getElementById("customerAddress").value.trim();
+  if(!name||!phone||!address){alert("দয়া করে নাম, মোবাইল নাম্বার ও সম্পূর্ণ ঠিকানা দিন।");return}
+  const msg=`আসসালামু আলাইকুম, GadgetVault-এ অর্ডার করতে চাই।%0A%0A📦 Product: ${selectedProduct}%0A💰 Price: ${selectedPrice==="Contact"?"Contact":"৳"+selectedPrice}%0A🔢 Quantity: ${qty}%0A👤 নাম: ${name}%0A📞 ফোন: ${phone}%0A📍 ঠিকানা: ${address}%0A%0A💵 ৳২০০ Advance দিতে প্রস্তুত আছি।`;
+  window.open("https://wa.me/"+WA+"?text="+msg,"_blank");
+  closeOrder();
+}
+function openLicense(){document.getElementById("licenseModal").classList.add("show")}
+function closeLicense(){document.getElementById("licenseModal").classList.remove("show")}
+document.querySelectorAll(".filter").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    document.querySelectorAll(".filter").forEach(x=>x.classList.remove("active"));
+    btn.classList.add("active");
+    const f=btn.dataset.filter;
+    document.querySelectorAll(".product").forEach(card=>{
+      card.style.display=(f==="all"||card.dataset.category===f)?"block":"none";
+    });
+  });
+});
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("visible")});
+},{threshold:.08});
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
